@@ -3,12 +3,19 @@
 
 *{
     padding: 0;
-    margin: 0;
+    margin: 0; 
+    color: #1F2124;
 }
+
 nav{
     font-family: 'Cairo', sans-serif;
     font-weight: 400;
     color: #1F2124;
+    overflow: hidden;
+}
+.navbar_fluid{
+    padding: 0;
+    margin: 0;
 }
 nav::after{
     content: "";
@@ -19,26 +26,41 @@ nav::after{
     height: 2px;
     background-color: #F6B352;
 }
-.boxing{
-    width: 300px;
-    text-align: center;
-    justify-content: space-around;
-}
-.box1{
+
+#account{
     background-color:hsla(35, 90%, 64%, 0.20) ;
-    padding: 10px 30px;
 }
-.box2{
-    background-color:#F6B352 ;
-    padding: 10px 30px;
+#urgency{
+    background-color: #F6B352;
 }
-.box3{
+#calendar{
     background-color: white;
-    padding: 10px 30px;
 }
-.boxing a {
+.nav-block{
+    height: 80px;
+}
+/**/
+.hr{
+    border: 1px solid #F6B352;
+}
+.accueil_header{
+    background-image: url("img/accueil.jpg");
+    background-color: #1F2124;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+.button{
+    border: 2px solid #F68657;
+}
+.button a {
     text-decoration: none;
-    color: black;
+    color: #1F2124;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 
@@ -52,8 +74,42 @@ nav::after{
         box-sizing: border-box;
         padding-top: 20px;
     }
+    nav{
+        font-size: 15px;
+    }
     .navbar-toggler{
         margin: 10px 0;
+        border-color: #1F2124;
+    }
+    .navbar-collapse{
+        background-color: white;
+    }
+    .accueil_header{
+        background-position: 90% 10% ;
+        width: calc(100% + 20px);
+    }
+    .accueil_header h1{
+        padding-top: 15vh;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    .accueil_header h3{
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    .hr{
+        width: 90px;
+        margin-left: 20px; 
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+    .button{
+        margin-left: 15px;
+        margin-top: 40px;
+        padding: 10px;
+    }
+    .button a{
+        font-size: 14px;
     }
 }
 
@@ -71,6 +127,32 @@ nav::after{
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+    }
+    .accueil_header{
+        background-position: 65% 35% ;
+    }
+    .accueil_header h1{
+        padding-top: 50vh;
+        padding-left: 200px;
+        font-size: 30px;
+    }
+    .accueil_header h3{
+        font-size: 25px;
+        padding-left: 200px;
+    }
+    .hr{
+        width: 200px;
+        margin-left: 200px; 
+        margin-top: 25px;
+        margin-bottom: 18px;
+    }
+    .button{
+        margin-left: 200px;
+        margin-top: 80px;
+        padding: 10px 15px;
+    }
+    .button a{
+        font-size: 16px;
     }
 
 }
