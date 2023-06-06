@@ -6,7 +6,10 @@
     margin: 0; 
     color: #1F2124;
 }
-
+body{
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+}
 nav{
     font-family: 'Cairo', sans-serif;
     font-weight: 400;
@@ -45,7 +48,7 @@ nav::after{
 }
 .accueil_header{
     background-image: url("img/accueil.jpg");
-    background-color: #1F2124;
+    background-color: #383A3F;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -62,8 +65,85 @@ nav::after{
     font-weight: 600;
     text-transform: uppercase;
 }
-
-
+.presentation{
+    background-color: #383A3F;
+    display: flex;
+    justify-content: center;
+}
+.presentation span{
+    color: white;
+    font-weight: 400;
+}
+.oval{
+    border-radius: 50%;
+    background-color: white;
+}
+.clinique{
+    text-align: left;
+    display: block;
+}
+.clinique h4{
+    color: #F68657;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+.clinique::after{
+    content: url("img/paw-print.png");
+    object-fit: cover;
+}
+.clinique strong {
+    color: #F6B352;
+}
+.service{
+    background-color:#383A3F;
+    padding: 50px 0 100px 0;
+}
+.service h4{
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+.service_class span{
+    color: white;
+    font-weight: 400;
+}
+.service_class_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.team{
+    text-align: left;
+    display: block;
+}
+.team p{
+    font-weight: 400;
+}
+.team h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: #F68657;
+}
+.hr_team{
+    border: 1px solid #F6B352;
+}
+.btn_team{
+    border: 2px solid #F68657;
+    text-decoration: none;
+    color: #1F2124;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+#carouselExample{
+    width: 40%;
+    margin: auto;
+}
+.carousel-item img{
+    width: 100%;
+    height: auto;
+    max-height: 80%;
+}
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
     .logo{
@@ -111,6 +191,60 @@ nav::after{
     .button a{
         font-size: 14px;
     }
+    .presentation{
+        height: 220px;
+        display: flex;
+        justify-content: space-around; 
+        font-size: 12px;
+    }
+    .oval{
+        margin-top: 50px;
+        width: 60px;
+        height: 60px;
+    }
+    .clinique{
+        padding: 20px;
+        padding: 0 50px;
+        margin-top: 40px;
+    }
+    .clinique h4{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .clinique::after{
+        width: 12px;
+        height: 10px;
+    }
+    .service h4{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .service_class{
+        height: 200px;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 8px;
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+    .hr_team{
+        width: 20%;
+        margin-left: 40%; 
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+    .btn_team{
+        font-size: 16px;
+    }
+    .team h4{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .team{
+        padding: 20px;
+        padding: 0 50px;
+        margin-top: 40px;
+    }
 }
 
 /*PC*/
@@ -153,6 +287,63 @@ nav::after{
     }
     .button a{
         font-size: 16px;
+    }
+    .presentation{
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+    }
+    .service_class{
+        height: 200px;
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+    .space{
+        padding: 0 70px 0 10px;
+    }
+    .oval{
+        margin-top: 50px;
+        width: 80px;
+        height: 80px;
+    }
+    .clinique{
+        padding: 20px;
+        display: block;
+        padding: 0 200px;
+        margin-top: 50px;
+    }
+    .clinique h4{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .clinique::after{
+        width: 20px;
+        height: 20px;
+    }
+    .service h4{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .team{
+        padding: 20px;
+        display: block;
+        padding: 0 200px;
+        margin-top: 50px;
+    }
+    .team h4{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .hr_team{
+        width: 10%;
+        margin-left: 45%; 
+        margin-top: 25px;
+        margin-bottom: 18px;
+    }
+    .btn_team{
+        font-size: 18px;
     }
 
 }
