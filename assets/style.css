@@ -90,6 +90,7 @@ nav::after{
 .clinique::after{
     content: url("img/paw-print.png");
     object-fit: cover;
+    display: flex;
 }
 .clinique strong {
     color: #F6B352;
@@ -135,14 +136,46 @@ nav::after{
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
 }
-#carouselExample{
-    width: 40%;
-    margin: auto;
-}
 .carousel-item img{
     width: 100%;
     height: auto;
     max-height: 80%;
+}
+.footer{
+    background-color: #383A3F;
+}
+.col-md-4 p{
+    color: white;
+    font-weight: 400;
+}
+.col-md-4 i{
+    color: white;
+}
+.col-md-4 h5{
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+.copyright{
+    background-color: rgb(246, 179, 82, 0.60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+.copyright p{
+   font-weight: 400;
+   margin-top: 10px;
+}
+.btn_rdv{
+    border: 2px solid #F68657;
+    border-radius: 0%
+}
+.btn_rdv a{
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: white;
 }
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
@@ -212,8 +245,8 @@ nav::after{
         font-size: 20px;
     }
     .clinique::after{
-        width: 12px;
-        height: 10px;
+        width: 80px;
+        height: 80px;
     }
     .service h4{
         font-size: 20px;
@@ -244,6 +277,22 @@ nav::after{
         padding: 20px;
         padding: 0 50px;
         margin-top: 40px;
+    }
+    #carouselExample{
+        width: 80%;
+        margin: auto;
+    }
+    .col-md-4 h5{
+        font-size: 16px;
+    }
+    .col-md-4 i{
+        padding-left: 30px;
+    }
+    .col-md-4 p {
+        font-size: 12px;
+    }
+    .logo_footer{
+        width: 100px;
     }
 }
 
@@ -319,8 +368,8 @@ nav::after{
         font-size: 30px;
     }
     .clinique::after{
-        width: 20px;
-        height: 20px;
+        width: 200px;
+        height: 100px;
     }
     .service h4{
         font-size: 30px;
@@ -343,6 +392,25 @@ nav::after{
         margin-bottom: 18px;
     }
     .btn_team{
+        font-size: 18px;
+    }
+    #carouselExample{
+        width: 40%;
+        margin: auto;
+    }
+    .footer{
+        padding: 100px;
+    }
+    .logo_footer{
+        width: 120px;
+    }
+    .col-md-4 h5{
+        font-size: 20px;
+    }
+    .col-md-4 i{
+        padding-left: 8%;
+    }
+    .col-md-4 p{
         font-size: 18px;
     }
 
