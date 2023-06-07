@@ -46,6 +46,7 @@ nav::after{
 .hr{
     border: 1px solid #F6B352;
 }
+/*ACCUEIL*/
 .accueil_header{
     background-image: url("img/accueil.jpg");
     background-color: #383A3F;
@@ -177,6 +178,51 @@ nav::after{
     font-weight: 600;
     color: white;
 }
+
+/*CLINIQUE*/
+.clinique_header{
+    background-image: url("img/clinique.jpg");
+    background-color: #383A3F;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+.equipement h4{
+    color: #F68657;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+.equipement p{
+    font-weight: 400;
+}
+.image_equipement{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.bloc{
+    background-image: url("img/bloc.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.equipe h4{
+    color: #F68657;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+.doctor{
+    display: flex;
+    justify-content: center;
+}
+.doctor_img{
+    text-align: center;
+    font-weight: 400;
+}
+.round{
+    border-radius: 50%;
+}
+
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
     .logo{
@@ -294,6 +340,65 @@ nav::after{
     .logo_footer{
         width: 100px;
     }
+    .clinique_header{
+        background-position: 60% 40%;
+        height: 80vh;
+    }
+    .clinique_header h1{
+        padding-top: 12vh;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    .clinique_header h3{
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    .equipement{
+        padding: 0 50px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    .equipement h4{
+        margin-bottom: 20px;
+        font-size: 25px;
+    }
+    .equipement p{
+        font-size: 14px;
+        line-height: 1.8rem;
+    }
+    .image_equipement img{
+        width: 75%;
+        height: auto;
+    }
+    .image_equipement{
+        margin-bottom: 50px;
+        flex-direction: column;
+        margin-left: 15%;
+    }
+    .bloc{
+        height: 20vh;
+    }
+    /*TEAM*/
+    .equipe{
+        margin-bottom: 50px;
+    }
+    .equipe h4{
+        margin-top: 20px;
+        font-size: 25px;
+        padding: 0 50px;
+    }
+    .doctor {
+        gap: 5%;
+        flex-wrap: wrap;
+    }
+    .doctor_img h5{
+        font-size: 14px;
+    }
+    .round{
+        margin-top: 20px;
+        width: 150px;
+        height: 140px;
+    }
 }
 
 /*PC*/
@@ -358,8 +463,6 @@ nav::after{
         height: 80px;
     }
     .clinique{
-        padding: 20px;
-        display: block;
         padding: 0 200px;
         margin-top: 50px;
     }
@@ -376,7 +479,6 @@ nav::after{
         margin-bottom: 30px;
     }
     .team{
-        padding: 20px;
         display: block;
         padding: 0 200px;
         margin-top: 50px;
@@ -399,7 +501,7 @@ nav::after{
         margin: auto;
     }
     .footer{
-        padding: 100px;
+        padding: 60px;
     }
     .logo_footer{
         width: 120px;
@@ -413,5 +515,66 @@ nav::after{
     .col-md-4 p{
         font-size: 18px;
     }
-
+    .clinique_header{
+        background-position: 75% 25% ;
+        height: 70vh;
+    }
+    .clinique_header h1{
+        padding-top: 30vh;
+        padding-left: 200px;
+        font-size: 30px;
+    }
+    .clinique_header h3{
+        font-size: 25px;
+        padding-left: 200px;
+    }
+    .equipement{
+        padding: 0 200px;
+        margin-bottom: 70px;
+        margin-top: 60px;
+    }
+    .equipement h4{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .equipement p{
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+    .image_equipement img{
+        width: 35%;
+        height: auto;
+    }
+    .image_equipement{
+        margin-bottom: 60px;
+    }
+    .bloc{
+        height: 35vh;
+        margin-bottom: 60px;
+    }
+    .equipe{
+        margin-bottom: 100px;
+        margin-top: 60px;
+    }
+    .equipe h4{
+        margin-bottom: 20px;
+        font-size: 30px;
+        padding: 0 200px;
+    }
+    .equipe p{
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+    /*TEAM*/
+    .doctor {
+        gap: 80px;
+    }
+    .doctor_img h5{
+        font-size: 16px;
+    }
+    .round{
+        margin-top: 50px;
+        width: 150px;
+        height: 120px;
+    }
 }
