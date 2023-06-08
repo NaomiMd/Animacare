@@ -133,6 +133,7 @@ nav::after{
 .btn_team{
     border: 2px solid #F68657;
     text-decoration: none;
+    border-radius: 0%;
     color: #1F2124;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
@@ -180,7 +181,7 @@ nav::after{
 }
 
 /*CLINIQUE*/
-.clinique_header{
+.clinique-header{
     background-image: url("img/clinique.jpg");
     background-color: #383A3F;
     background-repeat: no-repeat;
@@ -196,7 +197,7 @@ nav::after{
 .equipement p{
     font-weight: 400;
 }
-.image_equipement{
+.image-equipement{
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -215,14 +216,56 @@ nav::after{
     display: flex;
     justify-content: center;
 }
-.doctor_img{
+.doctor-img{
     text-align: center;
     font-weight: 400;
 }
 .round{
     border-radius: 50%;
 }
-
+/*CONTACT*/
+.contact-header{
+    background-image: url("img/contact.jpg");
+    background-color: #383A3F;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+.informations{
+    gap: 15px;
+    text-align: justify;
+}
+.informations h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+.consultation{
+    background-color: rgb(246, 179, 82, 0.20);
+}
+.urgence{
+    background-color: #F6B352;
+}
+.access{
+    background-color: rgb(246, 179, 82, 0.20);
+}
+.btn-consultation{
+    border: 2px solid #F68657;
+    text-decoration: none;
+    border-radius: 0%;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+.btn-consultation a{
+    text-decoration: none;
+    color: #1F2124;
+    text-transform: uppercase;
+}
+.urgence span{
+    border-top: 2px solid #383A3F;
+    border-bottom: 2px solid #383A3F;
+}
+/*MOBILE*/
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
     .logo{
@@ -340,16 +383,16 @@ nav::after{
     .logo_footer{
         width: 100px;
     }
-    .clinique_header{
+    .clinique-header{
         background-position: 60% 40%;
         height: 80vh;
     }
-    .clinique_header h1{
+    .clinique-header h1{
         padding-top: 12vh;
         padding-left: 20px;
         font-size: 20px;
     }
-    .clinique_header h3{
+    .clinique-header h3{
         font-size: 20px;
         padding-left: 20px;
     }
@@ -366,11 +409,11 @@ nav::after{
         font-size: 14px;
         line-height: 1.8rem;
     }
-    .image_equipement img{
+    .image-equipement img{
         width: 75%;
         height: auto;
     }
-    .image_equipement{
+    .image-equipement{
         margin-bottom: 50px;
         flex-direction: column;
         margin-left: 15%;
@@ -391,13 +434,55 @@ nav::after{
         gap: 5%;
         flex-wrap: wrap;
     }
-    .doctor_img h5{
+    .doctor-img h5{
         font-size: 14px;
     }
     .round{
         margin-top: 20px;
         width: 150px;
         height: 140px;
+    }
+    /*CONTACT*/
+    .contact-header{
+        background-position: 70% 30%;
+        height: 80vh;
+    }
+    .contact-header h1{
+        padding-top: 12vh;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    .contact-header h3{
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    .informations{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+    }
+    .informations h4 {
+        padding-bottom: 15px;
+        font-size: 1.8rem;
+    }
+    .informations i{
+        padding-left: 5px;
+    }
+    .informations p{
+        font-size: 15px;
+        padding-bottom: 15px;
+    }
+    .consultation{
+        padding: 40px;
+    }
+    .urgence{
+        padding: 40px;
+    }
+    .access{
+        padding: 40px;
+    }
+    .urgence span{
+        margin-left: 35%;
     }
 }
 
@@ -515,16 +600,16 @@ nav::after{
     .col-md-4 p{
         font-size: 18px;
     }
-    .clinique_header{
+    .clinique-header{
         background-position: 75% 25% ;
         height: 70vh;
     }
-    .clinique_header h1{
+    .clinique-header h1{
         padding-top: 30vh;
         padding-left: 200px;
         font-size: 30px;
     }
-    .clinique_header h3{
+    .clinique-header h3{
         font-size: 25px;
         padding-left: 200px;
     }
@@ -541,11 +626,11 @@ nav::after{
         font-size: 1rem;
         line-height: 1.8rem;
     }
-    .image_equipement img{
+    .image-equipement img{
         width: 35%;
         height: auto;
     }
-    .image_equipement{
+    .image-equipement{
         margin-bottom: 60px;
     }
     .bloc{
@@ -569,12 +654,49 @@ nav::after{
     .doctor {
         gap: 80px;
     }
-    .doctor_img h5{
+    .doctor-img h5{
         font-size: 16px;
     }
     .round{
         margin-top: 50px;
         width: 150px;
         height: 120px;
+    }
+    /*CONTACT*/
+    .contact-header{
+        background-position: 50% 50% ;
+        height: 70vh;
+    }
+    .contact-header h1{
+        padding-top: 30vh;
+        padding-left: 200px;
+        font-size: 30px;
+    }
+    .informations{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .informations h4 {
+        padding-bottom: 20px;
+        font-size: 2rem;
+    }
+    .informations i{
+        padding-left: 10px;
+    }
+    .informations p{
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+    .consultation{
+        padding: 60px;
+    }
+    .urgence{
+        padding: 60px;
+    }
+    .access{
+        padding: 60px;
+    }
+    .urgence span{
+        margin-left: 38%;
     }
 }
