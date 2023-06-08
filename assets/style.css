@@ -265,6 +265,36 @@ nav::after{
     border-top: 2px solid #383A3F;
     border-bottom: 2px solid #383A3F;
 }
+/*CONNEXION*/
+.connexion{
+    background-color: #383A3F;
+    color: white;
+}
+.create-account p{
+    color: white;
+}
+.connexion h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+.form-label{
+    color: white;
+    font-weight: 400;
+}
+.connexion a {
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 300;
+}
+.btn-connexion{
+    border: 2px solid #F68657;
+    text-decoration: none;
+    border-radius: 0%;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: white;
+}
 /*MOBILE*/
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
@@ -484,6 +514,24 @@ nav::after{
     .urgence span{
         margin-left: 35%;
     }
+    .connexion{
+        padding: 25px;
+        margin-top: 20vh;
+        margin-bottom: 20vh;
+        width: 90%;
+    }
+    .connexion h4{
+        font-size: 25px;
+    }
+    .form-control{
+        height: 35px;
+    }
+    .create-account {
+        font-size: 12px;
+    }
+    .connexion a{
+        font-size: 12px;
+    }
 }
 
 /*PC*/
@@ -698,5 +746,20 @@ nav::after{
     }
     .urgence span{
         margin-left: 38%;
+    }
+    .connexion{
+        padding: 30px;
+        margin-top: 20vh;
+        margin-bottom:20vh;
+        width: 20%;
+    }
+    .connexion h4{
+        font-size: 25px;
+    }
+    .create-account {
+        font-size: 15px;
+    }
+    .connexion a{
+        font-size: 15px;
     }
 }
