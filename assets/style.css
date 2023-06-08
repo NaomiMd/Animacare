@@ -762,4 +762,7 @@ nav::after{
     .connexion a{
         font-size: 15px;
     }
+    .form-control{
+        height: 35px;
+    }
 }
