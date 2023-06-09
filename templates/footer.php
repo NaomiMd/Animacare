@@ -10,7 +10,7 @@
             <h5>Urgence 24h/24 7j/7: 0245133</h5>
             <p>Rendez-vous: du lundi au samedi de 8h à 20h</p>
             <div class=" btn btn_rdv" >
-             <a href="">Prendre rendez-vous</a>
+             <a href="<?= generateLink("appointment.php") ?>">Prendre rendez-vous</a>
              </div>
         </div>
         <div class="col-md-4 pt-4 ps-5" >
@@ -22,7 +22,7 @@
     </div>
     </div>
 
-<div class=" container-fluid d-flex copyright" >
+<div class="container-fluid d-flex copyright">
     <img src="<?= generateLink("assets/img/logo.png") ?>" class="logo_footer" alt="logo">
     <p> &copy; copyright - 2023</p>
 </div>
