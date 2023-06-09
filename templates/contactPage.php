@@ -9,7 +9,7 @@
            <em> Pour les urgences merci de nous contacter par téléphone.</em>  
         </p>
         <div class="btn btn-consultation">
-            <a href="">prendre rendez-vous</a>
+            <a href="<?= generateLink("appointment.php") ?>">prendre rendez-vous</a>
         </div>
     </div>
     <div class="container urgence">
