@@ -9,31 +9,31 @@
         <div class="mx-auto p-0"></div>
       <ul class="navbar-nav">
         <li class="nav-item pt-3">
-          <a class="nav-link" aria-current="page" href="#">Accueil</a>
+          <a class="nav-link" aria-current="page" href="<?= generateLink("index.php") ?>">Accueil</a>
         </li>
        
         <li class="nav-item pt-3">
-          <a class="nav-link" href="#">La clinique</a>
+          <a class="nav-link" href="<?= generateLink("clinique.php") ?>">La clinique</a>
         </li>
         <li class="nav-item pt-3">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?= generateLink("contact.php") ?>">
             <span>Contact</span>
         </a>
         </li>
         <li class="nav-block text-center p-0" id="account" >
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?= generateLink("login.php") ?>">
             <i class="bi bi-person-circle"></i>
             <span>Accèder au compte</span>
         </a>
         </li>
         <li class="nav-block text-center p-0" id="urgency" >
           <div class="nav-link">
-            <span>Urgence 24h/7j</span>
+            <span>Urgence 24h/24<br> 7j/7</span>
             <span><strong>0245133</strong></span>
         </div>
         </li>
         <li class="nav-block text-center p-0" id="calendar">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?= generateLink("appointment.php") ?>">
           <i class="bi bi-calendar2-week"></i>
             <span>Prendre RDV</span>
         </a>
