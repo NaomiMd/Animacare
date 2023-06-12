@@ -315,6 +315,34 @@ nav::after{
 .form-select{
     border-radius: 0%;
 }
+/*PROFIL*/
+.profil{
+    margin-top: 200px;
+    margin-bottom: 5px;
+    padding-bottom: 50px;
+    color: #F68657;
+    font-family: 'Cormorant Garamon', serif;
+    font-weight: 600;
+}
+.profil-name{
+    color: white;
+    background-color: #383A3F;
+}
+.profil-information label{
+    color:#1F2124;
+}
+.form-profil{
+    border: #383A3F solid 1px;
+}
+.btn-modify{
+    border: 2px solid #F68657;
+    text-decoration: none;
+    border-radius: 0%;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: #1F2124;
+}
+
 /*MOBILE*/
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
@@ -552,6 +580,15 @@ nav::after{
     .connexion a{
         font-size: 12px;
     }
+    .form-profil{
+        padding: 25px;
+        margin-bottom: 20vh;
+        width: 90%;
+    }
+    .profil-name{
+        padding: 20px;
+        width: 90%;
+    }
 }
 
 /*PC*/
@@ -788,4 +825,14 @@ nav::after{
     .form-control{
         height: 35px;
     }
+    .form-profil{
+        padding: 40px;
+        margin-bottom: 20vh;
+        width: 30%;
+    }
+    .profil-name{
+        padding: 20px;
+        width: 30%;
+    }
+
 }
