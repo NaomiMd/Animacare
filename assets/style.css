@@ -295,6 +295,23 @@ nav::after{
     font-weight: 600;
     color: white;
 }
+.connexion h5 strong{
+    color: white;
+}
+.connexion h5{
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+}
+#appointment{
+    text-transform: uppercase;
+}
+.form-control{
+    border-radius: 0%
+}
+.form-select{
+    border-radius: 0%;
+}
 /*MOBILE*/
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
@@ -748,13 +765,16 @@ nav::after{
         margin-left: 38%;
     }
     .connexion{
-        padding: 30px;
+        padding: 40px;
         margin-top: 20vh;
         margin-bottom:20vh;
-        width: 20%;
+        width: 25%;
     }
     .connexion h4{
         font-size: 25px;
+    }
+    .connexion h5{
+        font-size: 16px;
     }
     .create-account {
         font-size: 15px;
