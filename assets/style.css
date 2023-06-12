@@ -29,6 +29,9 @@ nav::after{
     height: 2px;
     background-color: #F6B352;
 }
+.navbar-scrolled{
+    background-color: white;
+}
 
 #account{
     background-color:hsla(35, 90%, 64%, 0.20) ;
