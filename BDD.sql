@@ -1,0 +1,77 @@
+CREATE DATABASE IF NOT EXISTS Animacare CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+CREATE TABLE administrator
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(30) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL
+}ENGINE=INNODB;
+
+CREATE TABLE schedule
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    opening_time TIME NOT NULL,
+    closing_time TIME NOT NULL
+}ENGINE=INNODB;
+
+CREATE TABLE gallery
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    image_url VARCHAR(255)
+}ENGINE=INNODB;
+
+CREATE TABLE employee
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    fname VARCHAR(20) NOT NULL,
+    lname VARCHAR(20) NOT NULL,
+    title VARCHAR(20) NOT NULL
+}ENGINE=INNODB;
+
+CREATE TABLE appointment_type 
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20)
+}ENGINE=INNODB;
+
+CREATE TABLE species 
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL
+}ENGINE=INNODB;
+
+CREATE TABLE user
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    fname VARCHAR(20) NOT NULL,
+    lname VARCHAR(20) NOT NULL,
+    email VARCHAR(30) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(30) NOT NULL,
+    role VARCHAR(20) NOT NULL
+}ENGINE=INNODB;
+
+CREATE TABLE animal
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    age INT NOT NULL,
+    user INT NOT NULL,
+    FOREIGN KEY (user) REFERENCES user(id),
+    species INT NOT NULL,
+    FOREIGN KEY (species) REFERENCES species(id) 
+}ENGINE=INNODB;
+
+CREATE TABLE appointment
+{
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    appointment_time TIME NOT NULL,
+    appointment_day DATE NOT NULL,
+    appointment_type INT NOT NULL,
+    FOREIGN KEY (appointment_type) REFERENCES appointment_type(id),
+    user INT NOT NULL,
+    FOREIGN KEY (user) REFERENCES user(id)
+}ENGINE=INNODB;
