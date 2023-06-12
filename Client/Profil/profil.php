@@ -6,6 +6,10 @@ require_once _ROOT_ . "/templates/navbar.php";
 
 
     <h4 class="profil text-center">Mon profil</h4>
+    <div class="me-5 pb-3 d-flex justify-content-end">
+            <a href="<?= generateLink("Client/Appointment/appointmentView.php") ?>" class="btn me-3 btn-modify">Voir mes rendez-vous</a>
+            <a href="<?= generateLink("Client/Pets/petView.php") ?>" class="btn me-5 btn-modify">Voir mes animaux</a>
+        </div>
     <div class="container profil-name" >
         <h5>Nom - Prénom</h5>
     </div>
