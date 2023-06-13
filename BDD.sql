@@ -58,6 +58,7 @@ CREATE TABLE animal
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(20) NOT NULL,
     age INT NOT NULL,
+    sex VARCHAR(10) NOT NULL,
     user INT NOT NULL,
     FOREIGN KEY (user) REFERENCES user(id),
     species INT NOT NULL,
