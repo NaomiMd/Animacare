@@ -32,7 +32,6 @@ nav::after{
 .navbar-scrolled{
     background-color: white;
 }
-
 #account{
     background-color:hsla(35, 90%, 64%, 0.20) ;
 }
@@ -44,6 +43,9 @@ nav::after{
 }
 .nav-block{
     height: 80px;
+}
+.span-nav:hover{
+    color: #F6B352;
 }
 /**/
 .hr{
@@ -280,7 +282,7 @@ nav::after{
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
 }
-.form-label{
+.login{
     color: white;
     font-weight: 400;
 }

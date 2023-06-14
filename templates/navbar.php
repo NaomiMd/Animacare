@@ -9,21 +9,32 @@
         <div class="mx-auto p-0"></div>
       <ul class="navbar-nav">
         <li class="nav-item pt-3">
-          <a class="nav-link" aria-current="page" href="<?= generateLink("index.php") ?>">Accueil</a>
+          <a class="nav-link" aria-current="page" href="<?= generateLink("index.php") ?>">
+          <span class="span-nav">Accueil</span>
+          </a>
         </li>
        
         <li class="nav-item pt-3">
-          <a class="nav-link" href="<?= generateLink("clinique.php") ?>">La clinique</a>
+          <a class="nav-link" href="<?= generateLink("clinique.php") ?>">
+          <span class="span-nav" >La clinique</span>
+           </a>
         </li>
         <li class="nav-item pt-3">
           <a class="nav-link" href="<?= generateLink("contact.php") ?>">
-            <span>Contact</span>
+            <span class="span-nav">Contact</span>
         </a>
         </li>
+        <!-- VISIBLE UNIQUEMENT SI UN ADMIN EST CO-->
+        <li class="nav-item pt-3">
+          <a class="nav-link" href="<?= generateLink("Admin/Dashboard.php") ?>">
+            <span class="span-nav">Dashboard</span>
+        </a>
+        </li>
+
         <li class="nav-block text-center p-0" id="account" >
           <a class="nav-link" href="<?= generateLink("login.php") ?>">
             <i class="bi bi-person-circle"></i>
-            <span>Accèder au compte</span>
+            <span class="span-nav">Accèder au compte</span>
         </a>
         </li>
         <li class="nav-block text-center p-0" id="urgency" >
@@ -35,7 +46,7 @@
         <li class="nav-block text-center p-0" id="calendar">
           <a class="nav-link" href="<?= generateLink("appointment.php") ?>">
           <i class="bi bi-calendar2-week"></i>
-            <span>Prendre RDV</span>
+            <span class="span-nav">Prendre RDV</span>
         </a>
         </li>
       </ul>
