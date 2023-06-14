@@ -352,6 +352,14 @@ nav::after{
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
 }
+.table-container{
+    margin-top: 20vh;
+}
+.table-container h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: #F68657;
+}
 /*MOBILE*/
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
@@ -605,6 +613,9 @@ nav::after{
         margin-top: 25vh;
         font-size: 25px;
     }
+    .table-container h3{
+        font-size: 25px;
+    }
 }
 
 /*PC*/
@@ -855,6 +866,9 @@ nav::after{
     }
     .home h3{
         margin-top: 30vh;
+        font-size: 30px;
+    }
+    .table-container h3{
         font-size: 30px;
     }
 
