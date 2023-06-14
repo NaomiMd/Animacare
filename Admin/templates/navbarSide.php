@@ -15,16 +15,16 @@
           <a href="<?= generateLink("Admin/Dashboard.php") ?>" class="nav-link active" aria-current="page" href="#">Accueil</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="" class="nav-link" href="#">Horaires</a>
+          <a href="<?= generateLink("Admin/Schedule/viewSchedule.php")?>" class="nav-link">Horaires</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="" class="nav-link" href="#">Galerie</a>
+          <a href="<?= generateLink("Admin/Gallery/viewGallery.php")?>" class="nav-link">Galerie</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="" class="nav-link ">Rendez-vous</a>
+          <a href="<?= generateLink("Admin/Appointment/viewAppointment.php")?>" class="nav-link">Rendez-vous</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="" class="nav-link">Employés</a>
+          <a href="<?= generateLink("Admin/Employees/viewEmployee.php")?>" class="nav-link">Employés</a>
         </li>
       </ul>
       <div class="logout-btn" >
