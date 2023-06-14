@@ -342,7 +342,16 @@ nav::after{
     font-weight: 600;
     color: #1F2124;
 }
-
+/*DASHBOARD*/
+.btn-navSide{
+    border: 1px solid #F68657;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.home h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
 /*MOBILE*/
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
@@ -589,6 +598,13 @@ nav::after{
         padding: 20px;
         width: 90%;
     }
+    .logout-btn{
+        margin-top: 40vh;
+    }
+    .home h3{
+        margin-top: 25vh;
+        font-size: 25px;
+    }
 }
 
 /*PC*/
@@ -833,6 +849,13 @@ nav::after{
     .profil-name{
         padding: 20px;
         width: 30%;
+    }
+    .logout-btn{
+        margin-top: 55vh;
+    }
+    .home h3{
+        margin-top: 30vh;
+        font-size: 30px;
     }
 
 }
