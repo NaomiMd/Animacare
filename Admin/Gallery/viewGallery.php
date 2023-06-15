@@ -6,7 +6,8 @@ require_once _ROOT_ . "/Admin/templates/navbarSide.php";
 
 <div class="container table-container">
     <h3 class="text-center mb-5" >La galerie photo</h3>
-<table class="table  table-bordered">
+    <div class="table-responsive">
+<table class="table table-hover table-bordered">
   <thead>
     <tr>
       <th scope="col">Nom</th>
@@ -28,6 +29,7 @@ require_once _ROOT_ . "/Admin/templates/navbarSide.php";
     <div class="text-center mt-5" >
     <a href="<?= generateLink("Admin/Gallery/addPhoto.php")?>" class="btn btn-modify">Ajouter</a>
     </div>
+</div>
 </div>
 <?php 
 require_once _ROOT_ . "/Admin/templates/footer.php";

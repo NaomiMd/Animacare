@@ -6,7 +6,7 @@ require_once _ROOT_ . "/Admin/templates/navbarSide.php";
 
 <div class="container table-container">
     <h3 class="text-center mb-5" >Liste des employés de la clinique</h3>
-    <div class="table-responsive-sm">
+    <div class="table-responsive">
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
