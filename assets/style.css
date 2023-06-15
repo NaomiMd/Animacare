@@ -362,6 +362,9 @@ nav::after{
     font-weight: 500;
     color: #F68657;
 }
+.schedule-form{
+    color: #1F2124;
+}
 /*MOBILE*/
 @media screen and (min-width: 320px) and (max-width: 1219px) 
 {
@@ -618,6 +621,10 @@ nav::after{
     .table-container h3{
         font-size: 25px;
     }
+    .schedule-form{
+        margin: 0 20px;
+    }
+
 }
 
 /*PC*/
@@ -872,6 +879,9 @@ nav::after{
     }
     .table-container h3{
         font-size: 30px;
+    }
+    .schedule-form{
+        margin: 0 300px;
     }
 
 }
