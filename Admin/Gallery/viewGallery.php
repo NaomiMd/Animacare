@@ -12,6 +12,7 @@ require_once _ROOT_ . "/Admin/templates/navbarSide.php";
     <tr>
       <th scope="col">Nom</th>
       <th scope="col">Url de l'image</th>
+      <th scope="col">Image</th>
       <th class="col">Opérations</th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@ require_once _ROOT_ . "/Admin/templates/navbarSide.php";
     <tr>
       <td>Mark</td>
       <td>Otto</td>
+      <td><img src="" alt=""></td>
       <td>
         <a href="<?= generateLink("Admin/Gallery/deletePhoto.php")?>" class="btn btn-modify">Supprimer</a>
     </td>
