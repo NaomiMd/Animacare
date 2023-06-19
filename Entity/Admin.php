@@ -8,9 +8,15 @@ class Admin
     private $password;
     private $role;
 
-    public function hydrate(array $datas)
+
+    public function __construct(array $data)
     {
-        foreach($datas as $key => $value)
+        $this->hydrate($data);
+    }
+
+    public function hydrate(array $data)
+    {
+        foreach($data as $key => $value)
         {
             $method = 'set'.ucfirst($key);
         }
