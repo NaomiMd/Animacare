@@ -14,18 +14,19 @@ class Admin
         $this->hydrate($data);
     }
 
-    public function hydrate(array $data)
+    public function hydrate($data)
     {
-        foreach($data as $key => $value)
-        {
+        foreach ($data as $key => $value) {
+            // On récupère le nom du setter correspondant à l'attribut
             $method = 'set'.ucfirst($key);
-        }
-
-        if(method_exists($this, $method))
-        {
-            $this->$method($value);
-        }
-    }
+                
+            // Si le setter correspondant existe.
+            if (method_exists($this, $method)) {
+              // On appelle le setter
+              $this->$method($value);
+            }
+          }
+}
 
 
 
