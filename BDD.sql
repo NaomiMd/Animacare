@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS Animacare CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS animacare CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 CREATE TABLE administrator
 (
@@ -80,7 +80,7 @@ CREATE TABLE appointment
 
 INSERT INTO administrator(id, email, password, role) VALUES (1, 'adminVarcha@email.com', "$2y$10$iWfS4qnmT3F.v0T1XcA2Se1umlFU/lOatbYM6SUq0DxKsoqKxGwx6", "admin");
 
-INSERT INTO schedule(id, opening_time, closing_time) VALUES (1, '08h00', '20h00');
+INSERT INTO schedule(id, opening_time, closing_time) VALUES (1, '08:00:00', '20:00:00');
 
 INSERT INTO appointment_type(id, name) VALUES (1, "Consultation générale");
 INSERT INTO appointment_type(id, name) VALUES (2, "Vaccination");
