@@ -8,7 +8,7 @@ class UserController
     public function __construct()
     {
         try {
-            $this->pdo = new PDO('mysql:host=mysql;dbname=Animacare;charset=utf8mb4', 'root', 'root');
+            $this->pdo = new PDO('mysql:host=localhost;dbname=animacare;charset=utf8mb4', 'root', 'root');
         } catch(Exception $e) {
             echo('Erreur :' .$e->getMessage());
         }
