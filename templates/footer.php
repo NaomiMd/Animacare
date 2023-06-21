@@ -1,3 +1,9 @@
+<?php
+require_once _ROOT_ . '/Controller/ScheduleController.php';
+$scheduleController = new ScheduleController();
+$schedules = $scheduleController->getAll();
+?>
+
 <footer>
     <div class="container-fluid footer">
     <div class="row mx-auto pb-4 p-2 align-item-center">
@@ -8,7 +14,12 @@
         </div>
         <div class="col-md-4 pt-4 ps-5" >
             <h5>Urgence 24h/24 7j/7: 0245133</h5>
-            <p>Rendez-vous: du lundi au samedi de 8h à 20h</p>
+            <?php foreach($schedules as $schedule) : 
+                $opening = new DateTime($schedule->getOpening_time());
+                $closing = new DateTime($schedule->getClosing_time());
+                ?>
+            <p>Rendez-vous: du lundi au samedi de <?= $opening->format('H:i'); ?> à <?= $closing->format('H:i');?></p>
+            <?php endforeach; ?>
             <div class=" btn btn_rdv" >
              <a href="<?= generateLink("appointment.php") ?>">Prendre rendez-vous</a>
              </div>
