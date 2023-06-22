@@ -36,7 +36,7 @@ class AppointmentTypeController
     }
     public function getById($id): AppointmentType
     {
-        $req = $this->pdo->prepare("SELECT * FROM `appointment-type` WHERE id=:id");
+        $req = $this->pdo->prepare("SELECT * FROM `appointment_type` WHERE id=:id");
         $req->bindParam(":id", $id, PDO::PARAM_INT);
         $req->execute();
         $data = $req->fetch();
