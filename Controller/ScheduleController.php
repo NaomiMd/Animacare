@@ -23,7 +23,7 @@ class ScheduleController
         $this->pdo = $pdo;
         return $this;
     }
-    public function getAll():array
+    public function getAll(): array
     {
         $schedules = [];
         $req = $this->pdo->query("SELECT * FROM `schedule`");
@@ -33,11 +33,10 @@ class ScheduleController
             $schedules[] = new Schedule($schedule);
         }
         return $schedules;
-    }
-    public function getById($id): Schedule
+    }public function getSchedulebyId($id) : Schedule
     {
-        $req = $this->pdo->prepare("SELECT * FROM `schedule` WHERE id=:id");
-        $req->bindParam(":id", $id, PDO::PARAM_INT);
+        $req = $this->pdo->prepare("SELECT * FROM `schedule` WHERE id = :id");
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
         $req->execute();
         $data = $req->fetch();
         $schedule = new Schedule($data);
@@ -45,10 +44,10 @@ class ScheduleController
     }
     public function updateSchedule(Schedule $schedule)
     {
-        $req = $this->pdo->prepare("UPDATE `schedule` SET (opening_time=:opening_time, closing_time=:closing_time) WHERE id=:id");
+        $req = $this->pdo->prepare("UPDATE `schedule` SET opening_time=:opening_time, closing_time=:closing_time WHERE id=:id");
         $req->bindValue(":id", $schedule->getId(), PDO::PARAM_INT);
-        $req->bindValue(':opening_time',$schedule->getOpening_time(), PDO::PARAM_STR);
-        $req->bindValue(':closing_time',$schedule->getClosing_time(), PDO::PARAM_STR);
+        $req->bindValue(":opening_time",$schedule->getOpening_time(), PDO::PARAM_STR);
+        $req->bindValue(":closing_time",$schedule->getClosing_time(), PDO::PARAM_STR);
         $req->execute();
     }
 
