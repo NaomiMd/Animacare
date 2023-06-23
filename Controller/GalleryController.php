@@ -1,5 +1,5 @@
 <?php
-require_once _ROOT_ . '/Entity/GalleryController.php';
+require_once _ROOT_ . '/Entity/Gallery.php';
 
 class GalleryController
 {
