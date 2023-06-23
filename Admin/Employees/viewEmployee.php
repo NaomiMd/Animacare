@@ -31,7 +31,7 @@ $employees = $employeeController->getAll();
       <td><?= $employee->getFname();?></td>
       <td><?= $employee->getLname();?></td>
       <td><?= $employee->getTitle();?></td>
-      <td><img alt="Photo de <?= $employee->getFname();?>" src="../../assets/img/<?= $employee->getPhoto();?>" class="d-block mx-lg-auto img-fluid"  width="200" height="500" loading="lazy"></td>
+      <td><img alt="Photo de <?= $employee->getFname();?>" src="../../assets/img/<?= $employee->getPhoto();?>" class="d-block mx-lg-auto img-fluid"  width="200" loading="lazy"></td>
       <td>
         <a href="updateEmployee.php?id=<?= $employee->getId();?>" class="btn btn-modify">Modifier</a> 
        <a href="deleteEmployee.php?id=<?= $employee->getId();?>?>" class="btn btn-modify">Supprimer</a>
@@ -41,7 +41,7 @@ $employees = $employeeController->getAll();
   <?php endforeach; ?>
 </table>
 <div class="text-center mt-5" >
-    <a href="<?= generateLink("Admin/Employees/addEmployee.php")?>" class="btn btn-modify">Ajouter</a>
+    <a href="<?= generateLink("Admin/Employees/addEmployee.php")?>" class="btn btn-modify mb-5">Ajouter</a>
     </div>
 </div>
 </div>
