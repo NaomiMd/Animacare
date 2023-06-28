@@ -8,23 +8,19 @@ class Employee
     private $title;
     private $photo;
 
-    public function __construct(array $data)
-    {
+    public function __construct(array $data) {
         $this->hydrate($data);
     }
 
-    public function hydrate(array $data)
-    {
-        foreach($data as $key => $value)
-        {
-            $method = 'set' .ucfirst($key);
-
-            if(method_exists($this, $method))
-            {
+    public function hydrate($data): void {
+        foreach ($data as $key => $value) {
+            $method = "set" . ucfirst($key); // setId, setName, setColor
+            if (method_exists($this, $method)) {
                 $this->$method($value);
             }
         }
     }
+
 
     /**
      * Get the value of id
