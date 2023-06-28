@@ -35,10 +35,11 @@ class EmployeeController
         } 
         return $employees;
     }
-    public function getById($id): Employee
+    public function getEmployeeById($id): Employee
     {
         $req = $this->pdo->prepare("SELECT * FROM `employee` WHERE id=:id");
-        $req->bindParam(":id", $id, PDO::PARAM_INT);
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
         $data = $req->fetch();
         $employee = new Employee($data);
         return $employee;
@@ -54,10 +55,8 @@ class EmployeeController
     }
     public function updateEmployee(Employee $employee)
     {
-        $req = $this->pdo->prepare("UPDATE `employee` SET (fname=:fname, lname=:lname, title=:title, photo=:photo) WHERE id=:id");
+        $req = $this->pdo->prepare("UPDATE `employee` SET title=:title, photo=:photo WHERE id=:id");
         $req->bindValue(":id", $employee->getId(), PDO::PARAM_INT);
-        $req->bindValue(":fname", $employee->getFname(), PDO::PARAM_STR);
-        $req->bindValue(":lname", $employee->getLname(), PDO::PARAM_STR);
         $req->bindValue(":title", $employee->getTitle(), PDO::PARAM_STR);
         $req->bindValue(":photo", $employee->getPhoto(), PDO::PARAM_STR);
         $req->execute();
