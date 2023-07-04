@@ -220,6 +220,7 @@ nav::after{
 .doctor{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .doctor-img{
     text-align: center;
@@ -532,7 +533,6 @@ nav::after{
     }
     .doctor {
         gap: 5%;
-        flex-wrap: wrap;
     }
     .doctor-img h5{
         font-size: 14px;
@@ -800,8 +800,8 @@ nav::after{
     }
     .round{
         margin-top: 50px;
-        width: 150px;
-        height: 120px;
+        width: 160px;
+        height: 150px;
     }
     /*CONTACT*/
     .contact-header{
