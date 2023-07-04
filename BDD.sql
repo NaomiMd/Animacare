@@ -74,7 +74,9 @@ CREATE TABLE appointment
     appointment_day DATE NOT NULL,
     appointment_type INT NOT NULL,
     FOREIGN KEY (appointment_type) REFERENCES appointment_type(id),
-    user INT NOT NULL,
+    appointment_specie INT NOT NULL,
+    FOREIGN KEY (appointment_specie) REFERENCES species(id),
+    user INT,
     FOREIGN KEY (user) REFERENCES user(id)
 )ENGINE=INNODB;
 
