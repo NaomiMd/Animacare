@@ -46,23 +46,25 @@ class AppointmentController
     }
     public function createAppointment(Appointment $newAppointment)
     {
-        $req = $this->pdo->prepare("INSERT INTO `appointment` (name, appointment_time, appointment_day, appointment_type, user) VALUES (:name, :appointment_time, :appointment_day, :appointment_type, :user)");
+        $req = $this->pdo->prepare("INSERT INTO `appointment` (name, appointment_time, appointment_day, appointment_type, appointment_specie, user) VALUES (:name, :appointment_time, :appointment_day, :appointment_type, :appointment_specie, :user)");
         $req->bindValue(":name", $newAppointment->getName(), PDO::PARAM_STR);
         $req->bindValue(":appointment_time", $newAppointment->getAppointment_time(), PDO::PARAM_STR);
         $req->bindValue(":appointment_day", $newAppointment->getAppointment_day(), PDO::PARAM_STR);
         $req->bindValue(":appointment_type", $newAppointment->getAppointment_type(), PDO::PARAM_INT);
+        $req->bindValue(":appointment_specie", $newAppointment->getAppointment_specie(), PDO::PARAM_INT);
         $req->bindValue(":user", $newAppointment->getUser(), PDO::PARAM_INT);
         $req->execute();
     }
 
     public function updateAppointment(Appointment $appointment)
     {
-        $req = $this->pdo->prepare("UPDATE `appointment` SET (name=:name, appointment_time=:appointment_time, appointment_day=:appointment_day, appointment_type=:appointment_type, user=:user) WHERE id=:id");
+        $req = $this->pdo->prepare("UPDATE `appointment` SET (name=:name, appointment_time=:appointment_time, appointment_day=:appointment_day, appointment_type=:appointment_type, appointment_specie=:appointment_specie, user=:user) WHERE id=:id");
         $req->bindValue(":id", $appointment->getId(), PDO::PARAM_INT);
         $req->bindValue(":name", $appointment->getName(), PDO::PARAM_STR);
         $req->bindValue(":appointment_time", $appointment->getAppointment_time(), PDO::PARAM_STR);
         $req->bindValue(":appointment_day", $appointment->getAppointment_day(), PDO::PARAM_STR);
         $req->bindValue(":appointment_type", $appointment->getAppointment_type(), PDO::PARAM_INT);
+        $req->bindValue(":appointment_specie", $appointment->getAppointment_specie(), PDO::PARAM_INT);
         $req->bindValue(":user", $appointment->getUser(), PDO::PARAM_INT);
         $req->execute();
     }

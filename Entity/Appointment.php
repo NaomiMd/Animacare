@@ -8,6 +8,7 @@ class Appointment
     private $appointment_time;
     private $appointment_day;
     private $appointment_type;
+    private $appointment_specie;
     private $user;
 
     public function __construct(array $data)
@@ -144,6 +145,26 @@ class Appointment
     public function setUser($user)
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of appointment_specie
+     */ 
+    public function getAppointment_specie()
+    {
+        return $this->appointment_specie;
+    }
+
+    /**
+     * Set the value of appointment_specie
+     *
+     * @return  self
+     */ 
+    public function setAppointment_specie($appointment_specie)
+    {
+        $this->appointment_specie = $appointment_specie;
 
         return $this;
     }
