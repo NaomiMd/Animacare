@@ -80,4 +80,21 @@ class UserController
             return false;
         }
     }
+
+    public function verifyIfEmailExist(string $email)
+    {
+        $req = $this->pdo->prepare("SELECT COUNT(*) AS count FROM `user` WHERE email=:email");
+        $req->bindParam(":email", $email, PDO::PARAM_STR);
+        $req->execute();
+
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        $count = $result['count'];
+        if($count > 0)
+        {
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }
