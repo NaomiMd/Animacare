@@ -45,7 +45,7 @@ class UserController
     }
     public function createUser(User $newUser)
     {
-        $req = $this->pdo->prepare("INSERT INTO `user` (fname, lname, email, password, phone_number, role) VALUES (:fname, :lname, :email, :password, :phone_number,:role");
+        $req = $this->pdo->prepare("INSERT INTO `user` (fname, lname, email, password, phone_number, role) VALUES (:fname, :lname, :email, :password, :phone_number,:role)");
         $role = "user";
         $passwordHash = password_hash($newUser->getPassword(), PASSWORD_BCRYPT);
         $req->bindValue(":fname", $newUser->getFname(), PDO::PARAM_STR);
