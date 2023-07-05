@@ -70,7 +70,7 @@ class UserController
     public function verifyUserLogin(string $email, string $password)
     {
         $req = $this->pdo->prepare("SELECT * FROM `user` WHERE email=:email");
-        $req->bindValue(":email", $email, PDO::PARAM_STR);
+        $req->bindParam(":email", $email, PDO::PARAM_STR);
         $req->execute();
         $user = $req->fetch();
         if($user && password_verify($password, $user['password']))
