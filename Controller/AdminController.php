@@ -27,7 +27,7 @@ class AdminController
     public function getAll(): array
     {
         $admins = [];
-        $req = $this->pdo->query("SELECT * FROM `admin`");
+        $req = $this->pdo->query("SELECT * FROM `administrator`");
         $data = $req->fetchAll();
         foreach($data as $admin)
         {
@@ -38,7 +38,7 @@ class AdminController
 
     public function getById($id): Admin
     {
-        $req = $this->pdo->prepare("SELECT * FROM `admin` WHERE id=:id");
+        $req = $this->pdo->prepare("SELECT * FROM `administrator` WHERE id=:id");
         $req->bindValue(':id',$id,PDO::PARAM_INT);
         $req->execute();
         $data = $req->fetch();
@@ -48,7 +48,7 @@ class AdminController
 
     public function createAdmin(Admin $newAdmin)
     {
-        $req = $this->pdo->prepare("INSERT INTO `admin` (email, password, role) VALUES (:email, :password, :role)");
+        $req = $this->pdo->prepare("INSERT INTO `administrator` (email, password, role) VALUES (:email, :password, :role)");
         $passwordHash = password_hash($newAdmin->getPassword(), PASSWORD_BCRYPT);
         $role = "admin";
         $req->bindValue(":email", $newAdmin->getEmail(), PDO::PARAM_STR);
@@ -59,7 +59,7 @@ class AdminController
 
     public function verifyAdminLogin(string $email, string $password)
     {
-        $req = $this->pdo->prepare("SELECT * FROM `admin` WHERE email=:email");
+        $req = $this->pdo->prepare("SELECT * FROM `administrator` WHERE email=:email");
         $req->bindParam(":email", $email, PDO::PARAM_STR);
         $req->execute();
         $admin = $req->fetch();
