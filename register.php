@@ -15,7 +15,10 @@ if($_POST)
   $password = htmlspecialchars($_POST['password']);
   $confirmedPassword = htmlspecialchars($_POST['confirmedPassword']);
 
-  if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+  if($emailVerify = $userController->verifyIfEmailExist($email))
+  {
+    echo '<h4 class="text-center mt-5 pt-5" style="color: #F6B352">Cet email est déjà utilisé.<br/> Merci d\'en choisir un autre</h4>';
+  }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL))
   {
     echo '<h4 class="text-center mt-5 pt-5" style="color: #F6B352">Votre email n\'est pas valide</h4>';
   }elseif($password === $confirmedPassword)
@@ -34,6 +37,7 @@ if($_POST)
 
 <div class="container connexion">
     <h4 class="text-center mb-5" >S'inscrire</h4>
+    
   <form method="post">
   <div class="mb-3 mt-4">
     <label for="fname" class="form-label login">Nom</label>
