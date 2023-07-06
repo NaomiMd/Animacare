@@ -32,10 +32,9 @@ if($_POST)
 }
 ?>
 
-
     <div class="me-5 pb-3 d-flex justify-content-end">
-            <a href="<?= generateLink("Client/Appointment/appointmentView.php") ?>" class="btn me-3 btn-modify">Voir mes rendez-vous</a>
-            <a href="<?= generateLink("Client/Pets/petView.php") ?>" class="btn me-5 btn-modify">Voir mes animaux</a>
+            <a href="../Appointment/appointmentView.php?id=<?=$_SESSION['user_id']['id'] ?>" class="btn me-3 btn-modify">Voir mes rendez-vous</a>
+            <a href="../Pets/petView.php?id=<?=$_SESSION['user_id']['id'] ?>" class="btn me-5 btn-modify">Voir mes animaux</a>
         </div>
     <div class="container profil-name" >
         <h5>Nom - Prénom</h5>
