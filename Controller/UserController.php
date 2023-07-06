@@ -58,7 +58,7 @@ class UserController
     }
     public function updateUser(User $user)
     {
-        $req = $this->pdo->prepare("UPDATE `user` SET (email=:email, password=:password, phone_number=:phone_number) WHERE id=:id");
+        $req = $this->pdo->prepare("UPDATE `user` SET email=:email, password=:password, phone_number=:phone_number WHERE id=:id");
         $req->bindValue(":id", $user->getId(), PDO::PARAM_INT);
         $req->bindValue(":email", $user->getEmail(), PDO::PARAM_STR);
         $passwordHash = password_hash($user->getPassword(), PASSWORD_BCRYPT);
@@ -96,5 +96,15 @@ class UserController
             return false;
         }
 
+    }
+
+    public function UpdateUserInformationProfil(User $updateInformationUser)
+    {
+        $req = $this->pdo->prepare("UPDATE `user` SET phone_number=:phone_number, password=:password WHERE id=:id");
+        $req->bindValue(":phone_number", $updateInformationUser->getPhone_number(), PDO::PARAM_STR);
+        $passwordHash = password_hash($updateInformationUser->getPassword(), PASSWORD_BCRYPT);
+        $req->bindValue(":password",$passwordHash, PDO::PARAM_STR);
+        $req->bindValue(":id", $updateInformationUser->getId(), PDO::PARAM_INT);
+        $req->execute();
     }
 }
