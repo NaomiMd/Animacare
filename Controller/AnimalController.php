@@ -64,10 +64,11 @@ class AnimalController
         $req->bindValue(":species", $animal->getSpecies(), PDO::PARAM_INT);
         $req->execute();
     }
-    public function deleteAnimal($id)
+    public function deleteAnimal($userId, $animalId)
     {
-        $req = $this->pdo->prepare("DELETE FROM `animal` WHERE id=:id");
-        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req = $this->pdo->prepare("DELETE FROM `animal` WHERE user=:user AND id=:id");
+        $req->bindValue(":user", $userId, PDO::PARAM_INT);
+        $req->bindValue(":id", $animalId, PDO::PARAM_INT);
         $req->execute();
     }
 
