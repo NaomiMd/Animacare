@@ -116,4 +116,12 @@ class UserController
         $result = $req->fetch();
         return $result;
     }
+    public function getAllAnimalFromUser(User $userAnimal)
+    {
+        $req = $this->pdo->prepare("SELECT u.*, a.*, s.name as species_name FROM user u LEFT JOIN animal a ON u.id = a.user LEFT JOIN species s ON a.species = s.id WHERE u.id = :id");
+        $req->bindValue(":id", $userAnimal->getId(), PDO::PARAM_INT);
+        $req->execute();
+        $result = $req->fetchAll();
+        return $result;
+    }
 }
