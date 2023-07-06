@@ -18,23 +18,35 @@ if(isset($_GET['id']))
 
 ?>
     <h4 class="profil text-center">Mes animaux</h4>
-    
     <div class="me-5 pb-3 d-flex justify-content-end">
             <a href="./petAdd.php?id=<?=$_SESSION['user_id']['id'] ?>" class="btn btn-modify">Ajouter un animal</a>
         </div>
+<?php
+        // si l'user n'a pas d'animal enregistré on cache la boxe //
+        // if($userAnimal && count($userAnimal) > 0)//
+       if($userAnimal && $userAnimal['id'])
+       {
+         $allAnimals = $userController->getAllAnimalFromUser($user);
+         foreach($allAnimals as $animal) :
+        ?>
 
     <div class="container d-flex justify-content-between profil-name" >
-        <h5><?= $userAnimal['name']?></h5>
-        <h5><?= $userAnimal['age']?> an(s)</h5>
+        <h5>Nom : <?= $animal['name']?></h5>
+        <h5>Age :<?= $animal['age']?> an(s)</h5>
     </div>
     <div class="container text-center form-profil">    
-        <p>Sexe : <?= $userAnimal['sex']?></p>
-        <p>Espèce : <?= $userAnimal['species_name']?></p>
+        <p>Sexe : <?= $animal['sex']?></p>
+        <p>Espèce : <?= $animal['species_name']?></p>
+
         <div class="pb-3 pt-4 d-flex justify-content-center">
         <a href="./petDelete.php?id=<?=$_SESSION['user_id']['id'] ?>" class="btn btn-modify">Supprimer</a>
         </div>
     </div>
-
+    <?php 
+    endforeach;
+    }else{
+        echo '<h4 class="text-center m-5 p-5" style="color: #F68657">Veuillez ajouter votre animal pour voir ses informations ici</h4>';
+    }?>      
 <?php 
 require_once _ROOT_ . "/templates/footer.php";
 ?>
