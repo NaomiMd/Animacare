@@ -37,7 +37,7 @@ if($_POST)
             <a href="../Pets/petView.php?id=<?=$_SESSION['user_id']['id'] ?>" class="btn me-5 btn-modify">Voir mes animaux</a>
         </div>
     <div class="container profil-name" >
-        <h5>Nom - Prénom</h5>
+        <h5><?= $user->getFname()?> <?=$user->getLname(); ?></h5>
     </div>
     <div class="container form-profil">    
        <form class="profil-information" method="post">
