@@ -25,18 +25,38 @@
         </a>
         </li>
         <!-- VISIBLE UNIQUEMENT SI UN ADMIN EST CO-->
+        <?php if(isset($_SESSION['admin'])){?>
         <li class="nav-item pt-3">
           <a class="nav-link" href="<?= generateLink("Admin/Dashboard.php") ?>">
             <span class="span-nav">Dashboard</span>
         </a>
         </li>
-
+        <?php }?>
+        <?php if(empty($_SESSION['user'])){ ?>
+          <?php if(empty($_SESSION['admin'])){ ?>
+        <!-- VISIBLE QUAND USER NON CONNECTE -->
+        <!-- QUAND USER CONNECTE ON AJOUTE UN BLOCK A COTE D4ACCES COMPTE POUR BTN DECONNEXION | QUAND ADMIN CO CETTE PARTIE DEVIENDRA INVISIBLE -->
         <li class="nav-block text-center p-0" id="account" >
           <a class="nav-link" href="<?= generateLink("login.php") ?>">
             <i class="bi bi-person-circle"></i>
             <span class="span-nav">Accèder au compte</span>
         </a>
         </li>
+        <?php }}else{ ?>
+            <li class="nav-block text-center p-0" id="account" >
+          <a class="nav-link" href="Client/Profil/profil.php?id=<?= $_SESSION['user_id']['id'] ?>">
+            <i class="bi bi-person-circle"></i>
+            <span class="span-nav">Consulter son profil</span>
+            
+          </a>
+        </li>
+        <li class="nav-block text-center p-0" id="calendar" >
+          <a class="nav-link" href="<?= generateLink("logout.php") ?>">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="span-nav">Se déconnecter</span>
+          </a>
+        </li>
+        <?php } ?>
         <li class="nav-block text-center p-0" id="urgency" >
           <div class="nav-link">
             <span>Urgence 24h/24<br> 7j/7</span>
