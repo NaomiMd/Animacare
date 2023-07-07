@@ -15,7 +15,8 @@ if(isset($_GET['id']))
 {
     $getId = intval($_GET['id']);
     $user = $userController->getById($getId);
-    $userAnimal = $userController->getUserAndAnimalInformation($user);
+    $userAppointment = $userController->getIdOfAppointmentUser($user);
+
 
 }
 ?>
@@ -28,7 +29,8 @@ if(isset($_GET['id']))
         </div>
 
         <?php 
-            if($userAnimal && $userAnimal['id']){
+            
+            if($userAppointment && $userAppointment['id']){
                 $allAppointment = $userController->getAppointment($user);
                 foreach($allAppointment as $appointment) :
             
