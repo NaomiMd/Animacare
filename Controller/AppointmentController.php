@@ -68,10 +68,11 @@ class AppointmentController
         $req->bindValue(":user", $appointment->getUser(), PDO::PARAM_INT);
         $req->execute();
     }
-    public function deleteAppointment($id)
+    public function deleteAppointment($userId, $appointmentId)
     {
-        $req = $this->pdo->prepare("DELETE FROM `appointment` WHERE id=:id");
-        $req->bindValue(":id", $id, PDO::PARAM_INT);
+        $req = $this->pdo->prepare("DELETE FROM `appointment` WHERE user=:user AND id=:id");
+        $req->bindValue(":id", $appointmentId, PDO::PARAM_INT);
+        $req->bindValue(":user", $userId, PDO::PARAM_INT);
         $req->execute();
     }
 }
