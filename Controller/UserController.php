@@ -124,4 +124,12 @@ class UserController
         $result = $req->fetchAll();
         return $result;
     }
+    public function getAppointment(User $userAppointment)
+    {
+        $req = $this->pdo->prepare("SELECT u.*, a.*, an.*, s.name as species_name, t.name as appointment_type_name FROM user u LEFT JOIN appointment a ON u.id = a.user LEFT JOIN animal an ON u.id = an.user LEFT JOIN species s ON an.species = s.id LEFT JOIN appointment_type t ON a.appointment_type = t.id WHERE u.id = :id");
+        $req->bindValue(":id", $userAppointment->getId(), PDO::PARAM_INT);
+        $req->execute();
+        $result = $req->fetchAll();
+        return $result;
+    }
 }
