@@ -3,6 +3,10 @@ require_once("config.php");
 require_once _ROOT_ . "/templates/header.php";
 require_once _ROOT_ . "/templates/navbar.php";
 require_once _ROOT_ . "/Controller/UserController.php";
+if(isset($_SESSION['user']) || isset($_SESSION['admin']))
+{
+  header('location: index.php');
+}
 
 $userController = new UserController();
 
