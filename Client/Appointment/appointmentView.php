@@ -35,11 +35,11 @@ if(isset($_GET['id']))
         ?>
         
     <div class="container d-flex justify-content-between profil-name" >
-        <h5>Nom : <?= $appointment['name'] ?></h5>
+        <h5>Nom l'animal : <?= $appointment['name'] ?></h5>
         <h5>Le : <?= $appointment['appointment_day'] ?> à : <?= $appointment['appointment_time'] ?></h5>
     </div>
-    <div class="container text-center form-profil">    
-        <p>Nom : <?= $appointment['species_name']?></p>
+    <div class="container text-center form-profil">  
+        <p>Espèce : <?= $appointment['species_name']?></p>
         <p>Type de consultation : <?= $appointment['appointment_type_name'] ?></p>
         <div class="pb-3 pt-4 d-flex justify-content-center">
         <a href="./appointmentDelete.php?id=<?=$_SESSION['user_id']['id']?>" class="btn btn-modify">Annuler</a>
