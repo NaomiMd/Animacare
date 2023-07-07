@@ -4,6 +4,11 @@ require_once _ROOT_ . "/templates/header.php";
 require_once _ROOT_ . "/Admin/templates/navbarSide.php";
 require_once _ROOT_ . "/Controller/EmployeeController.php";
 
+if(!isset($_SESSION['admin']))
+{
+    header('location: ../../index.php');
+}
+
 $employeeController = new EmployeeController();
 $employees = $employeeController->getAll();
 ?>
