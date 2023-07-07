@@ -132,4 +132,12 @@ class UserController
         $result = $req->fetchAll();
         return $result;
     }
+    public function getIdOfAppointmentUser(User $userAppointment)
+    {
+        $req = $this->pdo->prepare("SELECT u.*, a.* FROM user u LEFT JOIN appointment a ON u.id = a.user WHERE u.id = :id");
+        $req->bindValue(":id", $userAppointment->getId(), PDO::PARAM_INT);
+        $req->execute();
+        $result = $req->fetch();
+        return $result;
+    }
 }
