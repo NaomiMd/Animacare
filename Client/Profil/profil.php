@@ -11,6 +11,11 @@ if(isset($_GET['id']))
     $getId = intval($_GET['id']);
     $user = $userController->getById($getId);
 }
+if(!isset($_SESSION['user_id']['id']) || $_SESSION['user_id']['id'] !== $getId)
+{
+    header('location: ../../index.php');
+}
+
 ?>
     <h4 class="profil text-center">Mon profil</h4>
 <?php

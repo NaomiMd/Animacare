@@ -13,7 +13,11 @@ $appointmentController = new AppointmentController();
 if(isset($_GET['id'])) {
     $getId = intval($_GET['id']);
     $user = $userController->getById($getId);
-
+}
+if(!isset($_SESSION['user_id']['id']) || $_SESSION['user_id']['id'] !== $getId)
+{
+    header('location: ../../index.php');
+}
     if($user) {
         $userAppointment = $userController->getIdOfAppointmentUser($user);
 
@@ -23,7 +27,6 @@ if(isset($_GET['id'])) {
             echo '<h4 class="text-center m-5 p-5" style="color: #F68657">Le rendez-vous a bien été supprimé</h4>';
         }
     }
-}
 ?>
 
 

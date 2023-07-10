@@ -12,6 +12,15 @@ if(isset($_GET['id']))
 {
     $getId = intval($_GET['id']);
     $user = $userController->getById($getId);
+}
+
+if(!isset($_SESSION['user_id']['id']) || $_SESSION['user_id']['id'] !== $getId)
+{
+    header('location: ../../index.php');
+}
+
+if(isset($_GET['id']))
+{
     $userAnimal = $userController->getUserAndAnimalInformation($user);
 }
 

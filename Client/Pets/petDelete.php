@@ -11,7 +11,11 @@ $animalController = new AnimalController();
 if(isset($_GET['id'])) {
     $getId = intval($_GET['id']);
     $user = $userController->getById($getId);
-
+}
+if(!isset($_SESSION['user_id']['id']) || $_SESSION['user_id']['id'] !== $getId)
+{
+    header('location: ../../index.php');
+}
     if($user) {
         $userAnimal = $userController->getUserAndAnimalInformation($user);
 
@@ -21,7 +25,6 @@ if(isset($_GET['id'])) {
             echo '<h4 class="text-center m-5 p-5" style="color: #F68657">Les informations de l\'animal ont bien été supprimé</h4>';
         }
     }
-}
 ?>
 
 <div class="m-5 p-5">
