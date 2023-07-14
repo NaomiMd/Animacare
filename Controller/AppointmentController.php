@@ -1,5 +1,6 @@
 <?php
-require_once _ROOT_ . '/Entity/Appointment.php';
+include_once __DIR__. '../../config.php';
+require_once _ROOT_. '/Entity/Appointment.php';
 
 class AppointmentController
 {
@@ -24,20 +25,27 @@ class AppointmentController
         return $this;
     }
 
+    public function getMore()
+    {
+    
+        echo'TEST';
+    }
+
     public function getAll(): array
     {
-        $appoitnments = [];
-        $req = $this->pdo->query("SELECT * FROM `appointment`");
+        $appointments = [];
+        $req = $this->pdo->query("SELECT * FROM `appointment` LIMIT 5");        
         $data = $req->fetchAll();
-        foreach($data as $appoitnment)
+        foreach($data as $appointment)
         {
-            $appoitnments[] = new Appointment($appoitnment);
+            $appointments[] = new Appointment($appointment);
+
         }
-        return $appoitnments;
+        return $appointments;
     }
     public function getById($id): Appointment
     {
-        $req = $this->pdo->prepare("SELECT * FROM `appoitment` WHERE id=:id");
+        $req = $this->pdo->prepare("SELECT * FROM `appointment` WHERE id=:id");
         $req->bindValue(":id", $id, PDO::PARAM_INT);
         $req->execute();
         $data = $req->fetch();
@@ -75,4 +83,39 @@ class AppointmentController
         $req->bindValue(":user", $userId, PDO::PARAM_INT);
         $req->execute();
     }
+
+    public function deleteAfterAppointment()
+    {
+        $req = $this->pdo->prepare("DELETE FROM `appointment` WHERE appointment_day < NOW() - INTERVAL 1 MONTH");
+        $req->execute();
+    }
+
+
+
+    public function seeMoreData()
+    {   
+        $limit = $_POST['limit'];
+        $start = $_POST['start'];
+        $appointments = [];
+        $req = $this->pdo->query("SELECT a.*, at.name AS appointment_type_name FROM `appointment` AS a INNER JOIN `appointment_type` AS at ON a.appointment_type = at.id LIMIT $start, $limit");
+        $data = $req->fetchAll();
+        foreach($data as $appointment) {
+            $appointments[] = new Appointment($appointment);
+        }
+        // Renvoyez les données au format JSON
+        header('Content-Type: application/json');
+        echo json_encode($data);
+         
+    }
+}
+
+$controller = new AppointmentController();
+
+// Vérifier si la méthode test() a été appelée via une requête Ajax
+if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+    // Appeler la méthode test() du contrôleur et renvoyer les données en tant que réponse Ajax
+    $controller->seeMoreData();
+
+
+
 }
